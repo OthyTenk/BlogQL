@@ -15,13 +15,14 @@ builder.prismaObject("User", {
   }),
 });
 
+
 // Ok, using the queryField like we mentioned
 builder.queryFields((t) => ({
   // Here we name our field for the root query
   retrieveUser: t.prismaField({
     // We are using the 'User' model from Prisma types
-    type: "User",
-    // We want the user to pass an argument of the type int
+    type: 'User',
+    // We want the user to pass an argument of the type int 
     args: {
       id: t.arg.int({ required: true }),
     },
@@ -32,10 +33,10 @@ builder.queryFields((t) => ({
         where: {
           id: args.id,
         },
-      });
+      })
     },
   }),
-}));
+}))
 
 builder.mutationFields((t) => ({
   createUser: t.prismaField({
@@ -61,4 +62,6 @@ builder.mutationFields((t) => ({
   }),
 }));
 
+
 export const schema = builder.toSchema();
+

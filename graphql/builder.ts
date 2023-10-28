@@ -1,18 +1,21 @@
 import SchemaBuilder from "@pothos/core";
 import PrismaPlugin from "@pothos/plugin-prisma";
 import { DateResolver } from "graphql-scalars";
+
+// This is the default location for the generator, but this can be
+// customized as described above.
+// Using a type only import will help avoid issues with undeclared
+// exports in esm mode
 import type PrismaTypes from "@pothos/plugin-prisma/generated";
 
-import { db as prisma } from "../prisma";
-import { createContext } from "./context";
-
+import { db as prisma } from "../prisma/index";
 
 export const builder = new SchemaBuilder<{
-  PrismaTypes: PrismaTypes;
-  Context: ReturnType<typeof createContext>;
+  // The types used here will be used for the resolvers
   Scalars: {
-    DateTime: { Input: Date; Output: Date };
+    Date: { Input: Date; Output: Date };
   };
+  PrismaTypes: PrismaTypes;
 }>({
   plugins: [PrismaPlugin],
   prisma: {
