@@ -16,26 +16,24 @@
     "@as-integrations/next": "^2.0.2",
     "@pothos/core": "^3.38.0",
     "@pothos/plugin-prisma": "^3.61.0",
-    "@prisma/client": "^5.4.2",
-    "autoprefixer": "10.4.14",
-    "eslint": "8.43.0",
-    "eslint-config-next": "13.4.7",
     "graphql": "^16.8.1",
     "graphql-scalars": "^1.22.4",
-    "next": "13.4.7",
-    "next-urql": "^5.0.2",
-    "postcss": "8.4.24",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.3.2",
-    "urql": "^4.0.5"
+    "next": "13.5.6",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/node": "20.3.1",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
-    "prisma": "^5.4.2",
+    "@prisma/client": "^5.5.2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.6",
+    "postcss": "^8",
+    "prisma": "^5.5.2",
+    "tailwindcss": "^3",
     "ts-node": "^10.9.1",
-    "typescript": "5.1.3"
+    "typescript": "^5"
   }
 }
