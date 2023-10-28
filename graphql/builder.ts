@@ -1,11 +1,11 @@
 import SchemaBuilder from "@pothos/core";
 import PrismaPlugin from "@pothos/plugin-prisma";
-import { DateTimeResolver } from "graphql-scalars";
+import { DateResolver } from "graphql-scalars";
 import type PrismaTypes from "@pothos/plugin-prisma/generated";
 
-
+import { db as prisma } from "../prisma";
 import { createContext } from "./context";
-import prisma from "@/prisma/prismadb";
+
 
 export const builder = new SchemaBuilder<{
   PrismaTypes: PrismaTypes;
@@ -25,4 +25,4 @@ builder.queryType();
 builder.mutationType();
 
 // This is where we've created the new date scalar
-builder.addScalarType("DateTime", DateTimeResolver, {});
+builder.addScalarType("Date", DateResolver, {});
