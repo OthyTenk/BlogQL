@@ -9,6 +9,8 @@ const server = new ApolloServer({
   schema,
 });
 
-export default startServerAndCreateNextHandler(server, {
-    context: async ( req, res ) => await createContext({ req, res }),
-});
+// export default startServerAndCreateNextHandler(server, {
+//     context: async ( req, res ) => await createContext({ req, res }),
+// });
+
+export default startServerAndCreateNextHandler(server);
