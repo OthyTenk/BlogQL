@@ -3,7 +3,7 @@ import { builder } from "../builder";
 
 builder.prismaObject("Post", {
   fields: (t) => ({
-    id: t.exposeInt("id"),
+    id: t.exposeString("id"),
     title: t.exposeString("title"),
     content: t.exposeString("content"),
     createdAt: t.expose("createdAt", {
@@ -23,7 +23,7 @@ builder.queryFields((t) => ({
   post: t.prismaField({
     type: 'Post',
     args: {
-      id: t.arg.int({ required: true }),
+      id: t.arg.string({ required: true }),
     },
     resolve: async (query, root, args, ctx, info) => {
       return db.post.findUniqueOrThrow({
@@ -43,7 +43,7 @@ builder.mutationFields((t) => ({
       content: t.arg.string({ required: true }),
       url: t.arg.string({ required: true }),
       isPublished: t.arg.boolean({ required: true }),
-      authorId: t.arg.int({ required: true }),
+      authorId: t.arg.string({ required: true }),
     },
     resolve: async (query, root, args, ctx, info) => {
       return db.post.create({

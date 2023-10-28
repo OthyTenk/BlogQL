@@ -3,7 +3,7 @@ import { builder } from "../builder";
 
 builder.prismaObject("User", {
   fields: (t) => ({
-    id: t.exposeInt("id"),
+    id: t.exposeString("id"),
     name: t.exposeString("name"),
     email: t.exposeString("email"),
     pass: t.exposeString("hashedPassword"),
@@ -24,7 +24,7 @@ builder.queryFields((t) => ({
     type: 'User',
     // We want the user to pass an argument of the type int 
     args: {
-      id: t.arg.int({ required: true }),
+      id: t.arg.string({ required: true }),
     },
     // Now we can defined what the resolver returns
     resolve: (query, root, args, ctx, info) => {
