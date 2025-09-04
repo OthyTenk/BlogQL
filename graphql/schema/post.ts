@@ -18,10 +18,9 @@ builder.prismaObject("Post", {
   }),
 });
 
-
 builder.queryFields((t) => ({
   post: t.prismaField({
-    type: 'Post',
+    type: "Post",
     args: {
       id: t.arg.string({ required: true }),
     },
@@ -30,14 +29,14 @@ builder.queryFields((t) => ({
         where: {
           id: args.id,
         },
-      })
+      });
     },
   }),
-}))
+}));
 
 builder.mutationFields((t) => ({
   createPost: t.prismaField({
-    type: 'Post',
+    type: "Post",
     args: {
       title: t.arg.string({ required: true }),
       content: t.arg.string({ required: true }),
